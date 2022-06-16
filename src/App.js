@@ -16,17 +16,13 @@ function App() {
   const sortDates = (data) => {
     console.log("dd", data);
     let sorted = data.sort((a, b) => {
-      // Turn your strings into dates, and then subtract them
-      // to get a value that is either negative, positive, or zero.
       return new Date(b.date) - new Date(a.date);
     });
     return sorted;
   };
 
   const dateSeperator = (records) => {
-    console.log("rec", records);
     const sortedDates = sortDates(records);
-    console.log("sorted", sortedDates);
     let groupKey = 0;
     let groups = sortedDates.reduce((r, o) => {
       let m = Moment(o.date).format("YYYY-MM-DD").split("-")[1];
