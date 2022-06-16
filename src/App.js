@@ -46,37 +46,34 @@ function App() {
   };
 
   return (
-    console.log("ds", selectedData["activity"]),
-    (
-      <div className="App">
-        <h1>Date Seggregation</h1>
-        <div style={{ display: "flex" }}>
-          {result.map((item) => (
-            <div
-              style={{
-                border: "1px solid grey",
-                width: "50%",
-                cursor: "pointer",
-              }}
-            >
-              {item.data.map((i, index) => (
-                <div onClick={() => setSelectedData(i)} key={index}>
-                  <p>{new Date(i.date).toDateString()}</p>
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-        <div>
-          <h2>Selected Record</h2>
-          <p>Activity: {selectedData["activity"]}</p>
-          <p>Comlince: {selectedData["comlince"]}</p>
-          <p>Comlince Type: {selectedData["comlince_type"]}</p>
-          <p>Date: {new Date(selectedData["date"]).toDateString()}</p>
-          <p>State: {selectedData['state']}</p>
-        </div>
+    <div className="App">
+      <h1>Date Seggregation</h1>
+      <div style={{ display: "flex" }}>
+        {result.map((item) => (
+          <div
+            style={{
+              border: "1px solid grey",
+              width: "50%",
+              cursor: "pointer",
+            }}
+          >
+            {item.data.map((i, index) => (
+              <div onClick={() => setSelectedData(i)} key={index}>
+                <p>{new Date(i.date).toDateString()}</p>
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
-    )
+      <div>
+        <h2>Selected Record</h2>
+        <p>Activity: {selectedData["activity"]}</p>
+        <p>Comlince: {selectedData["comlince"]}</p>
+        <p>Comlince Type: {selectedData["comlince_type"]}</p>
+        <p>Date: {new Date(selectedData["date"]).toDateString()}</p>
+        <p>State: {selectedData["state"]}</p>
+      </div>
+    </div>
   );
 }
 
